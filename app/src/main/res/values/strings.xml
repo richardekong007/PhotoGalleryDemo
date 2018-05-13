@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PhotoGalleryDemo</string>
+    <string name="pagination_format">%d of %d</string>
+</resources>
