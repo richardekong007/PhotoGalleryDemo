@@ -156,6 +156,7 @@ public class PhotoGallery extends FragmentActivity implements OnPhotoZoomedListe
                 @Override
                 public void onMatrixChanged(RectF rect) {
                     float leftDiff, topDiff, rightDiff, bottomDiff;
+                    final String stringFormat = "%f %f %f %f";
                     if (screenRect.left == 0 && screenRect.top == 0
                             && screenRect.right == 0 && screenRect.bottom == 0) {
                         screenRect = new RectF(rect);
@@ -167,7 +168,7 @@ public class PhotoGallery extends FragmentActivity implements OnPhotoZoomedListe
 
                     if (leftDiff < 2 && topDiff < 2 && rightDiff < 2 && bottomDiff < 2) {
                         setZoomed(false);
-                        Log.d("edge points", String.format(Locale.US, "%f %f %f %f", leftDiff, topDiff, rightDiff, bottomDiff));
+                        Log.d("edge points", String.format(Locale.US, stringFormat, leftDiff, topDiff, rightDiff, bottomDiff));
                     } else {
                         setZoomed(true);
                     }
